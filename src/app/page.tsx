@@ -2,8 +2,10 @@ import {
   HeroSection,
   ExecutiveAgentSection,
   ValuePropSection,
+  SocialProofSection,
   RegionsSection,
   PricingSection,
+  PostPricingCTASection,
   HowItWorksSection,
   FAQSection,
   SecuritySection,
@@ -18,8 +20,10 @@ export default function Home() {
       <HeroSection />
       <ExecutiveAgentSection />
       <ValuePropSection />
+      <SocialProofSection />
       <RegionsSection />
       <PricingSection />
+      <PostPricingCTASection />
       <HowItWorksSection />
       <FAQSection />
       <SecuritySection />

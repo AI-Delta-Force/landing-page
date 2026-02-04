@@ -1,45 +1,75 @@
 import { cn } from "@/lib/utils"
 import { forwardRef } from "react"
 
-type InputProps = React.InputHTMLAttributes<HTMLInputElement>
+interface InputProps extends React.InputHTMLAttributes<HTMLInputElement> {
+  error?: boolean
+  label?: string
+}
 
 export const Input = forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type = "text", ...props }, ref) => {
+  ({ className, type = "text", error, label, id, ...props }, ref) => {
+    const inputId = id || props.name
     return (
-      <input
-        ref={ref}
-        type={type}
-        className={cn(
-          "w-full bg-[hsl(var(--surface))] border border-[hsl(var(--border))] text-white rounded-lg px-4 py-2",
-          "placeholder:text-[hsl(var(--muted))]",
-          "focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))] focus:border-transparent",
-          "transition-colors",
-          className
+      <div className="relative">
+        {label && (
+          <label htmlFor={inputId} className="sr-only">
+            {label}
+          </label>
         )}
-        {...props}
-      />
+        <input
+          ref={ref}
+          id={inputId}
+          type={type}
+          className={cn(
+            "w-full h-11 md:h-12 bg-zinc-900/50 border border-zinc-800 text-white rounded-lg px-4",
+            "placeholder:text-[hsl(var(--muted))]",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/60 focus-visible:border-red-500/60",
+            "transition-all duration-200",
+            "autofill-dark",
+            error && "border-red-500 focus-visible:ring-red-500/60 focus-visible:border-red-500/60",
+            className
+          )}
+          aria-invalid={error ? "true" : undefined}
+          {...props}
+        />
+      </div>
     )
   }
 )
 
 Input.displayName = "Input"
 
-type TextareaProps = React.TextareaHTMLAttributes<HTMLTextAreaElement>
+interface TextareaProps extends React.TextareaHTMLAttributes<HTMLTextAreaElement> {
+  error?: boolean
+  label?: string
+}
 
 export const Textarea = forwardRef<HTMLTextAreaElement, TextareaProps>(
-  ({ className, ...props }, ref) => {
+  ({ className, error, label, id, ...props }, ref) => {
+    const textareaId = id || props.name
     return (
-      <textarea
-        ref={ref}
-        className={cn(
-          "w-full bg-[hsl(var(--surface))] border border-[hsl(var(--border))] text-white rounded-lg px-4 py-2",
-          "placeholder:text-[hsl(var(--muted))]",
-          "focus:outline-none focus:ring-2 focus:ring-[hsl(var(--accent))] focus:border-transparent",
-          "transition-colors resize-none",
-          className
+      <div className="relative">
+        {label && (
+          <label htmlFor={textareaId} className="sr-only">
+            {label}
+          </label>
         )}
-        {...props}
-      />
+        <textarea
+          ref={ref}
+          id={textareaId}
+          className={cn(
+            "w-full bg-zinc-900/50 border border-zinc-800 text-white rounded-lg px-4 py-3",
+            "placeholder:text-[hsl(var(--muted))]",
+            "focus:outline-none focus-visible:ring-2 focus-visible:ring-red-500/60 focus-visible:border-red-500/60",
+            "transition-all duration-200 resize-none",
+            "autofill-dark",
+            error && "border-red-500 focus-visible:ring-red-500/60 focus-visible:border-red-500/60",
+            className
+          )}
+          aria-invalid={error ? "true" : undefined}
+          {...props}
+        />
+      </div>
     )
   }
 )

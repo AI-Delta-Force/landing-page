@@ -69,3 +69,61 @@ a {
 .bg-gradient-radial {
   background-image: radial-gradient(ellipse at center, var(--tw-gradient-from), var(--tw-gradient-to));
 }
+
+/* Autofill styling for dark theme */
+.autofill-dark:-webkit-autofill,
+.autofill-dark:-webkit-autofill:hover,
+.autofill-dark:-webkit-autofill:focus,
+.autofill-dark:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 30px hsl(240 6% 4%) inset !important;
+  -webkit-text-fill-color: white !important;
+  caret-color: white;
+}
+
+/* Safe area padding for mobile */
+.pb-safe {
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+.pt-safe {
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+/* Typography tokens */
+.heading-1 {
+  @apply text-3xl md:text-4xl font-semibold tracking-tight;
+}
+
+.heading-2 {
+  @apply text-xl md:text-2xl font-semibold tracking-tight;
+}
+
+.heading-3 {
+  @apply text-lg font-semibold;
+}
+
+.body-text {
+  @apply text-sm md:text-[15px] leading-6 text-white/80;
+}
+
+.body-muted {
+  @apply text-sm text-zinc-400;
+}
+
+/* Background effects */
+.noise-overlay {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  opacity: 0.03;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+.vignette {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  z-index: -1;
+  background: radial-gradient(ellipse at center, transparent 0%, rgba(0, 0, 0, 0.4) 100%);
+}

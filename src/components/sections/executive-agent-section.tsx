@@ -4,10 +4,10 @@ import { Reveal } from "@/components/motion/reveal"
 
 export function ExecutiveAgentSection() {
   return (
-    <Section>
+    <Section aria-labelledby="executive-agent-heading">
       <Container className="max-w-3xl">
         <Reveal>
-          <h2 className="uppercase tracking-widest text-xs text-zinc-400 mb-4">
+          <h2 id="executive-agent-heading" className="uppercase tracking-widest text-xs text-zinc-400 mb-4">
             {executiveAgent.title}
           </h2>
           <p className="text-white mb-4">{executiveAgent.description}</p>

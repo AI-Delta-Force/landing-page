@@ -123,6 +123,19 @@ export const securityPoints: SecurityPoint[] = [
   { text: "Security audit before handoff — you can re-run it anytime" }
 ]
 
+export interface Testimonial {
+  quote: string
+  author: string
+  handle: string
+}
+
+export const testimonials: Testimonial[] = [
+  { quote: "Genuinely the most incredible AI LLM/agent-adjacent thing I have ever seen recently.", author: "Aakash Adesara", handle: "@aikihalex" },
+  { quote: "It feels like hiring an employee rather than opening another chat window.", author: "Will Martin", handle: "" },
+  { quote: "We've never seen it built a fully featured kanban board where I could assign it tasks and track their state.", author: "Alexander Wang", handle: "@alexandr_wang" },
+  { quote: "One user cleared nearly 6,000 emails from their inbox on the first day.", author: "Tuna Çolak", handle: "" }
+]
+
 export const footerLinks = {
   terms: "/terms",
   privacy: "/privacy",

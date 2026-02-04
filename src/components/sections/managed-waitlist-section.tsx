@@ -5,11 +5,11 @@ import { Reveal } from "@/components/motion/reveal"
 
 export function ManagedWaitlistSection() {
   return (
-    <Section>
+    <Section aria-labelledby="managed-waitlist-heading">
       <Container className="max-w-xl">
         <Reveal>
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 id="managed-waitlist-heading" className="text-2xl font-semibold text-white mb-4">
               Want us to handle everything?
             </h2>
             <p className="text-[hsl(var(--muted))]">

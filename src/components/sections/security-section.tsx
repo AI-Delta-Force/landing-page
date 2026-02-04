@@ -4,10 +4,10 @@ import { Reveal } from "@/components/motion/reveal"
 
 export function SecuritySection() {
   return (
-    <Section className="border-t border-zinc-800">
+    <Section className="border-t border-zinc-800" aria-labelledby="security-heading">
       <Container>
         <Reveal>
-          <h2 className="text-xl font-semibold mb-4">Security & your data</h2>
+          <h2 id="security-heading" className="text-xl font-semibold mb-4">Security & your data</h2>
           <p className="text-zinc-400 mb-6">
             OpenClaw runs locally — your data stays on your hardware. We follow the{" "}
             <a

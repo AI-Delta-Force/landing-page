@@ -4,10 +4,10 @@ import { Reveal } from "@/components/motion/reveal"
 
 export function ValuePropSection() {
   return (
-    <Section>
+    <Section aria-labelledby="value-prop-heading">
       <Container className="max-w-3xl">
         <Reveal>
-          <h2 className="uppercase tracking-widest text-xs text-zinc-400 mb-4">
+          <h2 id="value-prop-heading" className="uppercase tracking-widest text-xs text-zinc-400 mb-4">
             {valueProp.title}
           </h2>
           <div className="space-y-4">

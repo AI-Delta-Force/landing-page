@@ -10,11 +10,11 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
 
 const variantStyles: Record<ButtonVariant, string> = {
   primary:
-    "bg-white text-black rounded-lg px-4 py-2 font-medium hover:bg-zinc-200 active:bg-zinc-300 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+    "h-11 md:h-12 bg-red-500 text-white rounded-lg px-6 font-medium hover:bg-red-600 hover:shadow-[0_0_20px_rgba(239,68,68,0.3)] active:bg-red-700 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-red-500 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
   secondary:
-    "bg-transparent border border-[hsl(var(--border))] text-white rounded-lg px-4 py-2 font-medium hover:bg-white/5 hover:border-zinc-600 active:bg-white/10 transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
+    "h-11 md:h-12 bg-transparent border border-zinc-700 text-white rounded-lg px-6 font-medium hover:border-zinc-500 hover:bg-white/5 active:bg-white/10 transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 focus-visible:ring-offset-2 focus-visible:ring-offset-black",
   ghost:
-    "bg-transparent text-white underline underline-offset-4 hover:text-[hsl(var(--muted))] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded",
+    "bg-transparent text-white underline underline-offset-4 hover:text-[hsl(var(--muted))] transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white/50 rounded",
 }
 
 export const Button = forwardRef<HTMLButtonElement, ButtonProps>(

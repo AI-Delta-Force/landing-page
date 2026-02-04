@@ -5,11 +5,11 @@ import { Reveal } from "@/components/motion/reveal"
 
 export function RegionalWaitlistSection() {
   return (
-    <Section>
+    <Section aria-labelledby="regional-waitlist-heading">
       <Container className="max-w-md">
         <Reveal>
           <div className="text-center mb-8">
-            <h2 className="text-2xl font-semibold text-white mb-4">
+            <h2 id="regional-waitlist-heading" className="text-2xl font-semibold text-white mb-4">
               Not in the Bay Area?
             </h2>
             <p className="text-[hsl(var(--muted))]">

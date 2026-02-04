@@ -3,10 +3,18 @@ import { cn } from "@/lib/utils"
 interface ContainerProps {
   children: React.ReactNode
   className?: string
+  variant?: "default" | "narrow"
 }
 
-export function Container({ children, className }: ContainerProps) {
+const containerVariants = {
+  default: "max-w-6xl",
+  narrow: "max-w-[680px]",
+}
+
+export function Container({ children, className, variant = "default" }: ContainerProps) {
   return (
-    <div className={cn("max-w-3xl mx-auto px-6", className)}>{children}</div>
+    <div className={cn("mx-auto px-6", containerVariants[variant], className)}>
+      {children}
+    </div>
   )
 }
