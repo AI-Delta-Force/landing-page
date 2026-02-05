@@ -10,9 +10,9 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://clawd.chiayong.com"),
-  title: "SetupClaw - White-glove OpenClaw Deployment",
-  description: "Professional OpenClaw deployment for founders and exec teams. AI assistant that clears your inbox, manages your calendar, and does work - on your hardware.",
-  keywords: ["OpenClaw", "AI assistant", "email automation", "calendar management", "executive assistant", "AI deployment"],
+  title: "SimpleClaw - Deploy OpenClaw in Under 1 Minute",
+  description: "Avoid all technical complexity and one click deploy your own 24/7 active OpenClaw instance under 1 minute.",
+  keywords: ["OpenClaw", "AI assistant", "one-click deploy", "Telegram bot", "Discord bot", "AI deployment"],
   alternates: { canonical: "/" },
   robots: { index: true, follow: true },
   icons: {
@@ -20,19 +20,19 @@ export const metadata: Metadata = {
     apple: "/apple-touch-icon.png",
   },
   openGraph: {
-    title: "SetupClaw - White-glove OpenClaw Deployment",
-    description: "Professional AI assistant deployment for founders and exec teams.",
+    title: "SimpleClaw - Deploy OpenClaw in Under 1 Minute",
+    description: "Avoid all technical complexity and one click deploy your own 24/7 active OpenClaw instance under 1 minute.",
     type: "website",
     url: "https://clawd.chiayong.com",
-    siteName: "SetupClaw",
+    siteName: "SimpleClaw",
     images: [{ url: "/og-image.png", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "SetupClaw",
-    description: "White-glove OpenClaw deployment for founders.",
+    title: "SimpleClaw",
+    description: "Deploy OpenClaw in Under 1 Minute",
     images: ["/og-image.png"],
-    creator: "@michael_chomsky",
+    creator: "@saviomartin7",
   },
   other: {
     "theme-color": "#000000",

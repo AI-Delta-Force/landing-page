@@ -2,9 +2,9 @@ export function StructuredData() {
   const structuredData = {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    name: "SetupClaw",
+    name: "SimpleClaw",
     applicationCategory: "BusinessApplication",
-    description: "White-glove OpenClaw deployment for founders and exec teams. AI assistant that clears your inbox, manages your calendar, and does work.",
+    description: "Avoid all technical complexity and one click deploy your own 24/7 active OpenClaw instance under 1 minute.",
     url: "https://clawd.chiayong.com",
     offers: {
       "@type": "Offer",

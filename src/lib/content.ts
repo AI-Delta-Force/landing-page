@@ -1,143 +1,162 @@
-// Types
-export interface HeroContent {
-  tagline: string
-  description: string
-  integrations: string[]
-  socialProof: { text: string; url: string }
+// SimpleClaw Landing Page Content
+
+export interface ModelOption {
+  id: string;
+  label: string;
 }
 
-export interface ExecutiveAgentContent {
-  title: string
-  description: string
-  note: string
+export interface ChannelOption {
+  id: string;
+  label: string;
+  comingSoon?: boolean;
 }
 
-export interface ValuePropContent {
-  title: string
-  paragraphs: string[]
-  notes: string[]
+export interface LandingHeroContent {
+  productName: string;
+  headline: string;
+  subheadline: string;
+  modelOptions: ModelOption[];
+  channelOptions: ChannelOption[];
 }
 
-export interface Region {
-  type: "in-person" | "remote"
-  location: string
-  note: string
+export interface TraditionalStep {
+  step: string;
+  time: string;
 }
 
-export interface Step {
-  number: number
-  title: string
-  description: string
+export interface TraditionalMethod {
+  title: string;
+  totalTime: string;
+  steps: TraditionalStep[];
 }
 
-export interface PricingTier {
-  name: string
-  price: string
-  description: string
-  note?: string
+export interface SimpleClawMethod {
+  title: string;
+  time: string;
+  description: string;
+  note: string;
 }
 
-export interface FAQ {
-  question: string
-  answer: string
+export interface ComparisonContent {
+  title: string;
+  traditional: TraditionalMethod;
+  simpleclaw: SimpleClawMethod;
 }
 
-export interface SecurityPoint {
-  text: string
+export interface UseCaseItem {
+  label: string;
 }
 
-// Data - extract from setupclaw.com:
-
-export const hero: HeroContent = {
-  tagline: "SetupClaw",
-  description: "White-glove OpenClaw deployment for founders and exec teams. We professionally deploy and maintain the AI assistant that clears your inbox, manages your calendar, and actually does work — on your hardware, with security hardening and ongoing care. Built for companies with 4–50+ employees where the CEO/CFO/Head of Sales needs leverage without creating new security risk.",
-  integrations: ["Slack", "Gmail", "Calendar", "iMessage", "+20 more"],
-  socialProof: {
-    text: "2.5k+ likes and 500k+ views on the launch tweet",
-    url: "https://x.com/michael_chomsky/status/2017127819722256686"
-  }
+export interface UseCasesContent {
+  rows: UseCaseItem[][];
 }
 
-export const executiveAgent: ExecutiveAgentContent = {
-  title: "What's an \"Executive Agent\"?",
-  description: "1 Executive Agent = 1 OpenClaw instance configured for one primary identity (CEO inbox/calendar, CFO inbox, Head of Sales, shared EA inbox). This keeps pricing fair and security boundaries clean.",
-  note: "Most 4–50 employee teams deploy 2–6 agents."
+export interface SimpleFooterContent {
+  author: {
+    name: string;
+    url: string;
+  };
+  contactEmail: string;
 }
 
-export const valueProp: ValuePropContent = {
-  title: "Why not just set it up yourself?",
-  paragraphs: [
-    "You can — OpenClaw is open-source. But most teams need custom integrations beyond the defaults, and even experienced engineers spend several hours getting everything wired up.",
-    "Then there's the ongoing maintenance: updates, drift, broken workflows, security patches. We handle all of it — deployed securely from day one, following the official hardening guide, so your team gets leverage instead of another project to maintain.",
-    "It's the Collison Install — we show up and do it for you."
+export const landingHero: LandingHeroContent = {
+  productName: "SimpleClaw",
+  headline: "Deploy OpenClaw under 1 minute",
+  subheadline:
+    "Avoid all technical complexity and one click deploy your own 24/7 active OpenClaw instance under 1 minute.",
+  modelOptions: [
+    { id: "claude", label: "Claude Opus 4.5" },
+    { id: "gpt", label: "GPT-5.2" },
+    { id: "gemini", label: "Gemini 3 Flash" },
   ],
-  notes: [
-    "Hardware at cost or bring your own. Mac mini required for iMessage.",
-    "Implementation includes 14-day hypercare. Ongoing support requires Managed Care.",
-    "Not sure which plan? Book a free call →"
-  ]
-}
+  channelOptions: [
+    { id: "telegram", label: "Telegram" },
+    { id: "discord", label: "Discord" },
+    { id: "whatsapp", label: "WhatsApp", comingSoon: true },
+  ],
+};
 
-export const regions: Region[] = [
-  { type: "in-person", location: "SF Bay Area", note: "Expanding to more cities soon via licensed operators" },
-  { type: "remote", location: "Available worldwide", note: "We deploy on your hardware or VPS over a call" }
-]
+export const comparison: ComparisonContent = {
+  title: "Traditional Method vs SimpleClaw",
+  traditional: {
+    title: "Traditional",
+    totalTime: "30 min",
+    steps: [
+      { step: "Setup a server", time: "5 min" },
+      { step: "Install Docker", time: "3 min" },
+      { step: "SSH into server", time: "2 min" },
+      { step: "Setup OpenClaw Environment", time: "10 min" },
+      { step: "Configure API keys", time: "3 min" },
+      { step: "Setup Telegram bot", time: "5 min" },
+      { step: "Test and debug", time: "2 min" },
+    ],
+  },
+  simpleclaw: {
+    title: "SimpleClaw",
+    time: "<1 min",
+    description:
+      "Pick a model, connect Telegram, deploy — done under 1 minute.",
+    note: "Servers, SSH and OpenClaw Environment are already setuped waiting to get assigned. Simple, secure and fast connection to your bot.",
+  },
+};
 
-export const howItWorks: Step[] = [
-  { number: 1, title: "Kickoff", description: "Goals, systems (Google/Microsoft), security posture" },
-  { number: 2, title: "Implementation", description: "Install + harden + connect integrations + build workflows" },
-  { number: 3, title: "Go-live", description: "You start using it the same day" },
-  { number: 4, title: "Hypercare", description: "14 days of fast fixes and tuning via your dedicated Slack Connect channel" },
-  { number: 5, title: "Managed Care", description: "Monitoring, updates, drift checks, and ongoing improvements" }
-]
+export const useCases: UseCasesContent = {
+  rows: [
+    [
+      { label: "Read & summarize email" },
+      { label: "Draft replies and follow-ups" },
+      { label: "Translate messages" },
+      { label: "Organize inbox" },
+      { label: "Answer support tickets" },
+      { label: "Summarize documents" },
+      { label: "Notify before meeting" },
+      { label: "Schedule meetings" },
+    ],
+    [
+      { label: "Remind of deadlines" },
+      { label: "Plan week" },
+      { label: "Take meeting notes" },
+      { label: "Sync time zones" },
+      { label: "Do taxes" },
+      { label: "Track expenses" },
+      { label: "Compare insurance" },
+      { label: "Manage subscriptions" },
+    ],
+    [
+      { label: "Run payroll" },
+      { label: "Negotiate refunds" },
+      { label: "Find coupons" },
+      { label: "Find best prices" },
+      { label: "Find discount codes" },
+      { label: "Price-drop alerts" },
+      { label: "Compare product specs" },
+      { label: "Negotiate deals" },
+    ],
+    [
+      { label: "Write contracts/NDAs" },
+      { label: "Research competitors" },
+      { label: "Screen leads" },
+      { label: "Generate invoices" },
+      { label: "Create presentations" },
+      { label: "Book travel" },
+      { label: "Find recipes" },
+      { label: "Draft social posts" },
+    ],
+    [
+      { label: "Monitor news" },
+      { label: "Set goals" },
+      { label: "Screen cold outreach" },
+      { label: "Draft job descriptions" },
+      { label: "Run standup summaries" },
+      { label: "Track OKRs/KPIs" },
+    ],
+  ],
+};
 
-export const implementationPricing: PricingTier[] = [
-  { name: "Remote", price: "$1,500", description: "per Executive Agent", note: "Available worldwide" },
-  { name: "In-person", price: "$2,500", description: "per Executive Agent", note: "SF Bay Area" },
-  { name: "Enterprise", price: "Custom", description: "Multi-agent rollouts", note: "Contact us" }
-]
-
-export const managedCarePricing: PricingTier[] = [
-  { name: "Starter", price: "$500/mo", description: "1 agent", note: "Monitoring + updates" },
-  { name: "Growth", price: "$1,000/mo", description: "Up to 3 agents", note: "Priority support" },
-  { name: "Scale", price: "$2,000/mo", description: "Up to 6 agents", note: "Dedicated channel" }
-]
-
-export const faqs: FAQ[] = [
-  { question: "What is OpenClaw?", answer: "An open-source AI assistant that can triage email, schedule meetings, draft replies, and automate workflows across your tools — running on your own hardware." },
-  { question: "What's included in implementation?", answer: "Install + hardening, email + calendar integration, up to 3 mission-critical workflows, documentation, and 14-day hypercare. For in-person (SF Bay Area), we come to your location." },
-  { question: "How long does setup take?", answer: "Expect 5–8 hours all-in for most teams (more with multi-agent rollouts). You go live the same day, typically across one or two sessions." },
-  { question: "Do you offer support after setup?", answer: "Every customer gets a dedicated Slack Connect channel for direct support. Implementation includes 14-day hypercare. For ongoing monitoring, updates, and support, you'll need a Managed Care plan." },
-  { question: "Is OpenClaw safe to run?", answer: "It's never 100% safe — it's an AI with access to your email and calendar. The bigger risk is your InfoSec or CISO blocking it as shadow AI before you get any value from it. We configure it to pass security review: audit trails, access controls, hardening. We help you make the decisions necessary to get it to production instead of stuck in compliance limbo." },
-  { question: "What access do you need during setup?", answer: "Temporary access to the machine/network and the accounts you're connecting (email, calendar, messaging). We use least privilege and recommend credential rotation after go-live." },
-  { question: "Do you do multi-agent deployments?", answer: "Yes — this is the common case for 4–50 employee teams. We'll help decide which roles need their own agent vs shared workflows." }
-]
-
-export const securityPoints: SecurityPoint[] = [
-  { text: "Inbound access locked — DM pairing, mention-gating in groups, explicit allowlists" },
-  { text: "Network exposure minimized — loopback-only binding, no public endpoints" },
-  { text: "Tool blast radius limited — elevated tools restricted, sandboxing enabled" },
-  { text: "File permissions set — credentials and config locked to your user" },
-  { text: "Credentials in env vars — not in prompts, redacted from logs" },
-  { text: "Plugins explicitly allowed — no third-party or unaudited code" },
-  { text: "Security audit before handoff — you can re-run it anytime" }
-]
-
-export interface Testimonial {
-  quote: string
-  author: string
-  handle: string
-}
-
-export const testimonials: Testimonial[] = [
-  { quote: "Genuinely the most incredible AI LLM/agent-adjacent thing I have ever seen recently.", author: "Aakash Adesara", handle: "@aikihalex" },
-  { quote: "It feels like hiring an employee rather than opening another chat window.", author: "Will Martin", handle: "" },
-  { quote: "We've never seen it built a fully featured kanban board where I could assign it tasks and track their state.", author: "Alexander Wang", handle: "@alexandr_wang" },
-  { quote: "One user cleared nearly 6,000 emails from their inbox on the first day.", author: "Tuna Çolak", handle: "" }
-]
-
-export const footerLinks = {
-  terms: "/terms",
-  privacy: "/privacy",
-  contact: { twitter: "https://x.com/michael_chomsky", calendar: "https://cal.com/michaelsf/setup-clawdbot" }
-}
+export const simpleFooter: SimpleFooterContent = {
+  author: {
+    name: "Savio Martin",
+    url: "https://x.com/saviomartin7",
+  },
+  contactEmail: "savio@simpleclaw.com",
+};
