@@ -155,8 +155,8 @@ export const useCases: UseCasesContent = {
 
 export const simpleFooter: SimpleFooterContent = {
   author: {
-    name: "Savio Martin",
-    url: "https://x.com/saviomartin7",
+    name: "Yong Kang",
+    url: "https://x.com/chiayongkang",
   },
   contactEmail: "savio@simpleclaw.com",
 };
