@@ -158,5 +158,5 @@ export const simpleFooter: SimpleFooterContent = {
     name: "Yong Kang",
     url: "https://x.com/chiayongkang",
   },
-  contactEmail: "savio@simpleclaw.com",
+  contactEmail: "chiayongkang@hotmail.com",
 };

@@ -17,7 +17,7 @@ export function HeroAuthSection() {
       {/* Contact Support header */}
       <Container className="flex justify-end mb-8">
         <a 
-          href="mailto:savio@simpleclaw.com?subject=SimpleClaw%20Support%20Inquiry"
+          href="mailto:chiayongkang@hotmail.com?subject=SimpleClaw%20Support%20Inquiry"
           className="text-sm text-zinc-400 hover:text-white transition-colors"
         >
           Contact Support
